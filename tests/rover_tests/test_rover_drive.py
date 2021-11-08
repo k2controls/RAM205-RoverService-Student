@@ -1,6 +1,7 @@
+from Rover.Rover import Rover
 from Rover.RoverDrive import DriveCommand
 
-def test_rover_drive(rover):
+def test_rover_drive(rover:Rover):
     test_count = 0
 
     drive = rover.rover_drive

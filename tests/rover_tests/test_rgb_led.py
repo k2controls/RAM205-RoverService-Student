@@ -1,6 +1,7 @@
+from Rover.Rover import Rover
 from Rover.RGBLed import LED_COLOR
 
-def test_rgb_led(rover):
+def test_rgb_led(rover:Rover):
     test_count = 0
 
     print("Testing RGB LED.")

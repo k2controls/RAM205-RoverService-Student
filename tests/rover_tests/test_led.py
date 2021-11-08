@@ -1,5 +1,6 @@
+from Rover.Rover import Rover
 
-def test_led(rover):
+def test_led(rover:Rover):
     test_count = 0
 
     print("Testing led.")

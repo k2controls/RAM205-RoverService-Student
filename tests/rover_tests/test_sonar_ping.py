@@ -1,3 +1,4 @@
+from Rover.Rover import Rover
 
 def test_sonar_ping(rover):
     test_count = 0

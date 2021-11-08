@@ -14,10 +14,10 @@ from Rover.Servo import Servo
 from Rover.SonarPing import SonarPing
 from Rover.Warner import Warner
 
-def make_rover():
+def make_rover() -> Rover:
     rover = Rover()
 
-    buzzer = Buzzer(RoverPins.BUZZER_PIN)
+    buzzer = Buzzer(RoverPins.BUZZER_PIN, True)
     rover.buzzer = buzzer
 
     camera = Camera()

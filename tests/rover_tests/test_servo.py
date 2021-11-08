@@ -1,5 +1,6 @@
+from Rover.Rover import Rover
 
-def test_servo(rover):
+def test_servo(rover:Rover):
     test_count = 0
 
     print("Testing front servo.")

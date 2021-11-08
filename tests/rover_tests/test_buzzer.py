@@ -1,5 +1,6 @@
+from Rover.Rover import Rover
 
-def test_buzzer(rover):
+def test_buzzer(rover:Rover):
     test_count = 0
 
     print("Testing buzzer.")
@@ -53,7 +54,7 @@ def test_buzzer(rover):
     else:
         return 0
 
-    rover.buzzer.off()
+    rover.buzzer.beep_off()
 
     return test_count
 

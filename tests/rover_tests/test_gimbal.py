@@ -1,5 +1,6 @@
+from Rover.Rover import Rover
 
-def test_gimbal(rover):
+def test_gimbal(rover:Rover):
     test_count = 0
 
     print("Testing gimbal.")

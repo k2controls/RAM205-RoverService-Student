@@ -1,9 +1,6 @@
 from Rover.Rover import Rover
-from Rover.LineFollower import LineFollower
-from Rover.RoverDrive import DriveCommand
 
-
-def test_line_follower(rover):
+def test_line_follower(rover:Rover):
     test_count = 0
     lf = rover.line_follower
 

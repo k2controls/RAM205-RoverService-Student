@@ -1,3 +1,4 @@
+from Rover.Rover import Rover
 from tests.rover_tests.test_buzzer import test_buzzer
 from tests.rover_tests.test_camera import test_camera
 from tests.rover_tests.test_gimbal import test_gimbal
@@ -10,7 +11,7 @@ from tests.rover_tests.test_sonar_ping import test_sonar_ping
 from tests.rover_tests.test_warner import test_warner
 
 
-def test_rover(rover):
+def test_rover(rover:Rover):
     if not test_buzzer(rover):
         print("Buzzer tests failed.")
     elif not test_camera(rover):

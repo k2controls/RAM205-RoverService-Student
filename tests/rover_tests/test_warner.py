@@ -1,3 +1,4 @@
+from Rover.Rover import Rover
 
 def test_warner(rover):
     test_count = 0
