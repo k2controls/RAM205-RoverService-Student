@@ -8,7 +8,8 @@ class Servo():
     CCW_POSITION = 0
     CW_POSITION = 180
 
-    def __init__(self, pin):
+    def __init__(self, gpio_mode, pin):
+        GPIO.setmode(gpio_mode)
         self._pin = pin
         #TODO config servo pin
 

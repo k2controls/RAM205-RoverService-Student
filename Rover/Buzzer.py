@@ -7,13 +7,13 @@ import RPi.GPIO as GPIO
 
 class Buzzer:
 
-    def __init__(self, pin, active_low=False):
+    def __init__(self, gpio_mode, pin, active_low=False):
         self._pin = pin
         self._active_low = active_low
         self._on = not active_low
         self._pwm = None
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(gpio_mode)
         GPIO.setup(self._pin, GPIO.OUT)
         self.off()
 

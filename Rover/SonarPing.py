@@ -6,7 +6,8 @@ provides a distance value as a property
 
 class SonarPing():
 
-    def __init__(self, trigger_pin, pulse_pin):
+    def __init__(self, gpio_mode, trigger_pin, pulse_pin):
+        GPIO.setmode(gpio_mode)
         self._trigger_pin = trigger_pin
         self._pulse_pin = pulse_pin
         self.distance = -1

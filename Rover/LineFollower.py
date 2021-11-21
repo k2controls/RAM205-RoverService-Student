@@ -8,7 +8,7 @@ from Rover.RoverDrive import DriveCommand
 
 class LineFollower:
 
-    def __init__(self, far_left_pin, left_pin, right_pin, far_right_pin):
+    def __init__(self, gpio_mode, far_left_pin, left_pin, right_pin, far_right_pin):
         self.far_left_pin = far_left_pin
         self.left_pin = left_pin
         self.right_pin = right_pin
@@ -16,7 +16,7 @@ class LineFollower:
         self.state = [0,0,0,0]  #[far_left. left, right, far_right]
         #config GPIO
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(gpio_mode)
 
         GPIO.setup(self.far_left_pin, GPIO.IN)
         GPIO.setup(self.left_pin, GPIO.IN)

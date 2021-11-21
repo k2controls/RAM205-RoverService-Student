@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 class LED:
        
-    def __init__(self, pin, active_low=False):
+    def __init__(self, gpio_mode, pin, active_low=False):
         self._pin = pin
         self._active_low = active_low
         if self._active_low:
@@ -18,7 +18,7 @@ class LED:
             self.DC_OFF = 0
         self.is_on = False
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(gpio_mode)
         GPIO.setup(self._pin, GPIO.OUT)
         self._pwm = GPIO.PWM(self._pin, 50)
         self._pwm.start(self.DC_OFF)

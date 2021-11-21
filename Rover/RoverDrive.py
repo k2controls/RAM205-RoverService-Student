@@ -23,7 +23,8 @@ class RoverDrive:
 
     DEFAULT_SPEED = 50
 
-    def __init__(self, 
+    def __init__(self,
+        gpio_mode, 
         left_in1_pin, 
         left_in2_pin, 
         left_speed_pin,
@@ -43,7 +44,7 @@ class RoverDrive:
 
         #config GPIO
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(gpio_mode)
         GPIO.setup(self.left_in1_pin, GPIO.OUT)
         GPIO.setup(self.left_in2_pin, GPIO.OUT)
         GPIO.setup(self.left_speed_pin, GPIO.OUT)
