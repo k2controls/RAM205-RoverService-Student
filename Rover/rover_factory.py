@@ -20,7 +20,7 @@ from Rover.Warner import Warner
 def make_rover():
     rover = Rover()
     
-    buzzer = Buzzer(RoverPins.GPIO_MODE, RoverPins.BUZZER_PIN)
+    buzzer = Buzzer(RoverPins.GPIO_MODE, RoverPins.BUZZER_PIN, active_low=True)
     rover.buzzer = buzzer
 
     camera = Camera()
