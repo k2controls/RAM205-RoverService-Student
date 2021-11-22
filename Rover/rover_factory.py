@@ -26,8 +26,8 @@ def make_rover():
     camera = Camera()
     rover.camera = camera
 
-    g_h_servo = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_2)
-    g_v_servo = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_3)
+    g_h_servo = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_2, .0005, .0025)
+    g_v_servo = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_3, .0005, .0025)
     gimbal = Gimbal(g_h_servo,g_v_servo)
     rover.gimbal = gimbal
  
@@ -58,7 +58,7 @@ def make_rover():
     )
     rover.rover_drive = rd
 
-    s = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_1)
+    s = Servo(RoverPins.GPIO_MODE, RoverPins.SERVO_HEADER_1, .0005, .0025)
     rover.servo = s
 
     ping = SonarPing(RoverPins.GPIO_MODE, RoverPins.PING_TRIGGER_PIN, RoverPins.PING_PULSE_PIN)
