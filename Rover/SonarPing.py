@@ -3,7 +3,8 @@ Service that continually pings and
 provides a distance value as a property
 11/8/21
 '''
-import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO
+import time
 class SonarPing():
 
     def __init__(self, gpio_mode, trigger_pin, pulse_pin):
