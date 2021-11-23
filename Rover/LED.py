@@ -1,10 +1,11 @@
 ''' LED class
 Provides basic LED functions. A GPIO pin is required.
 PWM used to support dimming and blinking
-11/8/21
+- added RoverPins.BOARD_MODE
+11/23/21
 '''
 import RPi.GPIO as GPIO
-
+from Rover.RoverPins import RoverPins
 class LED:
        
     def __init__(self, pin, active_low=False):
@@ -18,7 +19,7 @@ class LED:
             self.DC_OFF = 0
         self.is_on = False
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(RoverPins.BOARD_MODE)
         GPIO.setup(self._pin, GPIO.OUT)
         self._pwm = GPIO.PWM(self._pin, 50)
         self._pwm.start(self.DC_OFF)

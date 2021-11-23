@@ -1,11 +1,12 @@
 ''' Line Follower class
 Senses line follower inputs and
 determines next motion required.
-11/8/21
+- added RoverPins.BOARD_MODE
+11/23/21
 '''
 import RPi.GPIO as GPIO
 from Rover.RoverDrive import DriveCommand
-
+from Rover.RoverPins import RoverPins
 class LineFollower:
 
     def __init__(self, far_left_pin, left_pin, right_pin, far_right_pin):
@@ -16,7 +17,7 @@ class LineFollower:
         self.state = [0,0,0,0]  #[far_left. left, right, far_right]
         #config GPIO
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(RoverPins.BOARD_MODE)
 
         GPIO.setup(self.far_left_pin, GPIO.IN)
         GPIO.setup(self.left_pin, GPIO.IN)

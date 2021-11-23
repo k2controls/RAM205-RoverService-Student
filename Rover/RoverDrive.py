@@ -1,10 +1,11 @@
 ''' RoverDrive Class
 Control drive by passing in a DriveCommand to the update
 method. Requires motor controller pin numbers
-11/1/21
+- added RoverPins.BOARD_MODE
+11/23/21
 '''
 import RPi.GPIO as GPIO
-
+from Rover.RoverPins import RoverPins
 class DriveCommand:
     ''' (l_in1, l_in2, r_in1, r_in2)
     '''
@@ -43,7 +44,7 @@ class RoverDrive:
 
         #config GPIO
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(RoverPins.BOARD_MODE)
         GPIO.setup(self.left_in1_pin, GPIO.OUT)
         GPIO.setup(self.left_in2_pin, GPIO.OUT)
         GPIO.setup(self.left_speed_pin, GPIO.OUT)
