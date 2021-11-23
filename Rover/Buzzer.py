@@ -1,19 +1,20 @@
 ''' Buzzer class
 Abstracts basic Buzzer functions. GPIO Pin is required.
 PWM created on if Beep() called.
-11/8/21
+- added RoverPins.BOARD_MODE
+11/23/21
 '''
 import RPi.GPIO as GPIO
-
+from Rover.RoverPins import RoverPins
 class Buzzer:
 
-    def __init__(self, pin, active_low=False):
+    def __init__(self, pin, active_low=True):
         self._pin = pin
         self._active_low = active_low
         self._on = not active_low
         self._pwm = None
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(RoverPins.BOARD_MODE)
         GPIO.setup(self._pin, GPIO.OUT)
         self.off()
 
