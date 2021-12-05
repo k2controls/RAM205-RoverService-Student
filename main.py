@@ -23,7 +23,7 @@ def main():
     rover_service = RoverService(cs,rover)
     #press LED OFF twice to exit
     while True:
-        if rover_service.last_command == rover_service.command == Command_ID.LED_OFF:
+        if rover_service.last_command.command_id == rover_service.command.command_id == Command_ID.LED_OFF:
             break
         time.sleep(.5)
 
