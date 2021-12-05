@@ -25,9 +25,10 @@ class RoverService(Thread):
         
     def run(self):
         while True:
-            if self.command_service.command_queue:
+            next_command = self.command_service.next_command()
+            if next_command:
                 self.last_command = self.command
-                self.command = self.command_service.command_queue.pop(0)
+                self.command = next_command
                 self.do_command(self.command)
                
     def do_command(self, command):
