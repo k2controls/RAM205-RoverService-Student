@@ -1,11 +1,12 @@
 ''' Colorful Controller class
 '''
-import time
-from Rover.RGBLed import RGBLed, LED_COLOR
 from threading import Thread
+from Rover.Rover import Rover
+from Rover.RGBLed import LED_COLOR
+import time
 
 class ColorfulController(Thread):
-    def __init__(self, rover):
+    def __init__(self, rover:Rover):
         self.rover = rover
         self.go = True
         Thread.__init__(self)

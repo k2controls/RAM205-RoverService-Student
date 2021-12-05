@@ -2,16 +2,14 @@
 '''
 from Controllers.Controller import Controller
 from Bluetooth.Commands import Command_ID
-from Rover.RoverDrive import DriveMotion
-from Rover.Buzzer import BuzzerStatus
-from Rover.LED import LEDStatus
-from Rover.RGBLed import LED_COLOR
+from Bluetooth.Command import Command
+from Rover.Rover import Rover
 
 class ControlPadController(Controller):
-    def __init__(self, rover):
+    def __init__(self, rover:Rover):
         self.rover = rover
 
-    def update(self, command):
+    def update(self, command:Command):
         self.last_command = command
         print(f">>>CommandID={command.command_id}, Value={command.value}")
 
